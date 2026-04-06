@@ -576,36 +576,23 @@ SELECT rcs_agg(flow, 100, 4096) AS sketch FROM flows;
 
 ---
 
-## File Structure
+## File Structure```
 sketches/
-
-├── CMakeLists.txt                    # Build system entry point
-
-├── extension_config.cmake            # Extension name and source file list
-
-├── Makefile                          # Convenience wrapper around CMake
-
-├── duckdb/                           # DuckDB source (git submodule, pinned v1.2.0)
-
-├── extension-ci-tools/               # DuckDB CI utilities (git submodule)
-
-├── src/
-
-  │   ├── sketches_extension.cpp        # Extension entry point, function registration
-
-  │   └── include/
-
-│       ├── sketches_extension.hpp    # Extension class declaration
-
-│       └── sketches_aggregate.hpp    # All sketch structs and DuckDB operation structs
-
-  │   └── sketches_aggregate.cpp        # Bind functions and scalar function implementations
-
-└── test/
-
-└── sql/
-
-└── sketches.test                     # SQL-based test suite
+    CMakeLists.txt
+    extension_config.cmake
+    Makefile
+    duckdb/                        (git submodule, pinned v1.2.0)
+    extension-ci-tools/            (git submodule)
+    src/
+        sketches_extension.cpp
+        sketches_aggregate.cpp
+        include/
+            sketches_extension.hpp
+            sketches_aggregate.hpp
+    test/
+        sql/
+            sketches.test
+```
 
 ---
 
