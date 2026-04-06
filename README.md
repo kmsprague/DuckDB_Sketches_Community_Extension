@@ -576,7 +576,9 @@ SELECT rcs_agg(flow, 100, 4096) AS sketch FROM flows;
 
 ---
 
-## File Structure```
+## File Structure
+
+```
 sketches/
     CMakeLists.txt
     extension_config.cmake
