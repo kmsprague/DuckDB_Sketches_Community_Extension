@@ -591,15 +591,15 @@ sketches/
 
 ├── src/
 
-│   ├── sketches_extension.cpp        # Extension entry point, function registration
+  │   ├── sketches_extension.cpp        # Extension entry point, function registration
 
-│   └── include/
+  │   └── include/
 
-│       ├── sketches_extension.hpp    # Extension class declaration
+    │       ├── sketches_extension.hpp    # Extension class declaration
 
-│       └── sketches_aggregate.hpp    # All sketch structs and DuckDB operation structs
+    │       └── sketches_aggregate.hpp    # All sketch structs and DuckDB operation structs
 
-│   └── sketches_aggregate.cpp        # Bind functions and scalar function implementations
+  │   └── sketches_aggregate.cpp        # Bind functions and scalar function implementations
 
 └── test/
 
