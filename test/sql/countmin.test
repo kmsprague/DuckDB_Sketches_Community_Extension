@@ -1,0 +1,31 @@
+# name: test/sql/countmin.test
+# description: Count-Min Sketch basic tests
+# group: [countmin]
+
+statement ok
+CREATE TABLE words AS
+  SELECT unnest(['apple','banana','apple','cherry','apple','banana']) AS word;
+
+query I
+SELECT countmin_query(countmin_agg(word), 'apple') FROM words;
+----
+3
+
+query I
+SELECT countmin_query(countmin_agg(word), 'banana') FROM words;
+----
+2
+
+query I
+SELECT countmin_query(countmin_agg(word), 'cherry') FROM words;
+----
+1
+
+# Test GROUP BY
+query II
+SELECT word, countmin_query(countmin_agg(word), word) AS cnt
+FROM words GROUP BY word ORDER BY word;
+----
+apple	3
+banana	2
+cherry	1
